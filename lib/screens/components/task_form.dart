@@ -116,6 +116,7 @@ class _TaskFormState extends State<TaskForm> {
                               completed: false,
                               priorty: selectedPriority,
                               completionDate: selectedDate,
+                              id: '',
                             ));
                       }
                     },
