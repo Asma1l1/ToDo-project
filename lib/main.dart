@@ -21,17 +21,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Add to list',
-      home: const Home(),
-      theme: ThemeData(
-        brightness: Brightness.light,
+    return ChangeNotifierProvider(
+      create: (context) => TaskProvider()..fetchTasks(),
+      child: MaterialApp(
+        title: 'To-Do App',
+        debugShowCheckedModeBanner: false,
+        home: Home(),
       ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
-      themeMode: ThemeMode.system,
-      debugShowCheckedModeBanner: false,
     );
+    //  return MaterialApp(
+    //  title: 'Add to list',
+    //  home: const Home(),
+    //  theme: ThemeData(
+    //    brightness: Brightness.light,
+    //  ),
+    //  darkTheme: ThemeData(
+    //    brightness: Brightness.dark,
+    //  ),
+    //  themeMode: ThemeMode.system,
+    //  debugShowCheckedModeBanner: false,
+    //);
   }
 }
